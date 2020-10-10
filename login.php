@@ -39,7 +39,7 @@
           }
           else{
               echo '<script>alert("Contraseña incorrecta")</script> ';
-              echo "<script>location.href=login.php</script>";
+              echo "<script>location.href=PagPrin.php</script>";
           }
         }
       }
