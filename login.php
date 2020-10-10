@@ -1,6 +1,6 @@
 <?php // Example 26-7: login.php
   require_once 'header.php';
-  require_once 'setup.php';
+  //require_once 'setup.php';
   require_once 'functions.php';
   //require_once 'setup.php';
   $error = $Usuario = $Contraseña = "";
