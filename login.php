@@ -26,7 +26,7 @@
         $_SESSION['Usuario'] = $Usuario;
         $_SESSION['Contraseña'] = $Contraseña;
 
-      $result=queryMysql("SELECT Usuario FROM usuarios WHERE Usuario='{$SESSION['Usuario']}'");
+      $result=queryMysql("SELECT Usuario FROM usuarios WHERE Usuario='{$_SESSION['Usuario']}'");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($result->num_rows > 0){
           if ($row['Usuario'] == 'Administrador'){
