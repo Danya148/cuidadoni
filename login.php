@@ -58,7 +58,13 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          Please enter your details to log in
+          Para ingresar como usuario: 
+          Usuario: Usuario
+          Contraseña: Usua2803
+
+          Para ingresar como administrador:
+          Usuario: Administrador
+          Contraseña: Admin2803
         </div>
           <label>Username</label>
           <input type='text' maxlength='16' name='Usuario' value='$Usuario'>
