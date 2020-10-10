@@ -12,6 +12,7 @@ echo <<<_INIT
     <script src='javascript.js'></script>
     <script src='jquery-2.2.4.min.js'></script>
     <script src='jquery.mobile-1.4.5.min.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 _INIT;
 
 ?>

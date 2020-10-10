@@ -2,7 +2,7 @@
   require_once 'header.php';
   //require_once 'setup.php';
   require_once 'functions.php';
-  require_once 'PagPrin.php';
+  //require_once 'PagPrin.php';
   //require_once 'setup.php';
   $error = $Usuario = $Contraseña = "";
 
@@ -67,7 +67,7 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          <input data-transition='slide' type='submit' value='Login'>
+          <button data-transition='slide' type='submit' value='Login' class="btn-primary">Submit</button>
         </div>
       </form>
     </div>
