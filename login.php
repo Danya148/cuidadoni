@@ -1,7 +1,7 @@
 <?php // Example 26-7: login.php
-  require_once 'header.php';
+  //require_once 'header.php';
   require_once 'setup.php';
-  require_once 'index.php';
+  //require_once 'index.php';
   //require_once 'setup.php';
   $error = $Usuario = $Contraseña = "";
 
@@ -31,7 +31,7 @@
       if ($result->num_rows > 0){
           if ($row['Usuario'] == 'Administrador'){
               echo '<script>alert("Bienvenido Administrador")</script> ';
-              echo "<script>location.href='index.php'</script>";
+              echo "<script>location.href='PagPrin.php'</script>";
           }
           else if($row['Usuario'] == 'Usuario'){
               echo '<script>alert("Bienvenido Cliente")</script> ';
