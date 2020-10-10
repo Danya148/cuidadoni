@@ -62,7 +62,7 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label>Password</label>
-          <input type='password' maxlength='16' name='contraseña' value='$contraseña'>
+          <input type='password' maxlength='16' name='Contraseña' value='$Contraseña'>
         </div>
         <div data-role='fieldcontain'>
           <label></label>
