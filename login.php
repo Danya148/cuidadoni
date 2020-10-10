@@ -1,37 +1,54 @@
 <?php // Example 26-7: login.php
   require_once 'header.php';
   require_once 'setup.php';
-  $error = $user = $pass = "";
+  require_once 'index.php';
+  //require_once 'setup.php';
+  $error = $Usuario = $Contraseña = "";
 
-  if (isset($_POST['user']))
+  if (isset($_POST['Usuario']))
   {
-    $user = sanitizeString($_POST['user']);
-    $pass = sanitizeString($_POST['pass']);
+    $Usuario = sanitizeString($_POST['Usuario']);
+    $Contraseña = sanitizeString($_POST['Contraseña']);
     
-    if ($user == "" || $pass == "")
-      $error = 'Not all fields were entered';
+    if ($Usuario == "" || $Contraseña == "")
+      $error = 'No se ingresaron todos los campos requeridos';
     else
     {
-      $result = queryMySQL("SELECT user,pass FROM members
-        WHERE user='$user' AND pass='$pass'");
+      $result = queryMySQL("SELECT Usuario,Contraseña FROM usuarios
+        WHERE Usuario='$Usuario' AND Contraseña='$Contraseña'");
 
       if ($result->num_rows == 0)
       {
-        $error = "Invalid login attempt";
+        $error = "Inicio de sesion no valido";
       }
       else
       {
-        $_SESSION['user'] = $user;
-        $_SESSION['pass'] = $pass;
-        die("<div class='center'>You are now logged in. Please
-             <a data-transition='slide' href='members.php?view=$user'>click here</a>
-             to continue.</div></div></body></html>");
+        $_SESSION['Usuario'] = $Usuario;
+        $_SESSION['Contraseña'] = $Contraseña;
+
+      $result=queryMysql("SELECT Usuario FROM usuarios WHERE Usuario='{$SESSION['Usuario']}'");
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      if ($result->num_rows > 0){
+          if ($row['Usuario'] == 'Administrador'){
+              echo '<script>alert("Bienvenido Administrador")</script> ';
+              echo "<script>location.href='index.php'</script>";
+          }
+          else if($row['Usuario'] == 'Usuario'){
+              echo '<script>alert("Bienvenido Cliente")</script> ';
+              echo "<script>location.href='PagPrin.php'</script>";
+          }
+          else{
+              echo '<script>alert("Contraseña incorrecta")</script> ';
+              echo "<script>location.href=login.php</script>";
+          }
+        }
       }
     }
   }
 
 echo <<<_END
       <form method='post' action='login.php'>
+       <div class="form-group">
         <div data-role='fieldcontain'>
           <label></label>
           <span class='error'>$error</span>
@@ -40,13 +57,12 @@ echo <<<_END
           <label></label>
           Please enter your details to log in
         </div>
-        <div data-role='fieldcontain'>
           <label>Username</label>
-          <input type='text' maxlength='16' name='user' value='$user'>
+          <input type='text' maxlength='16' name='Usuario' value='$Usuario'>
         </div>
         <div data-role='fieldcontain'>
           <label>Password</label>
-          <input type='password' maxlength='16' name='pass' value='$pass'>
+          <input type='password' maxlength='16' name='contraseña' value='$contraseña'>
         </div>
         <div data-role='fieldcontain'>
           <label></label>
