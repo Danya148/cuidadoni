@@ -58,7 +58,7 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          Para ingresar como usuario:<br> 
+          INGRESAR:<br> 
           Usuario: Usuario<br>
           Contraseña: Usua2803<br><br>
 
