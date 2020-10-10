@@ -42,6 +42,11 @@ _INIT;
                 'NumTarjeta VARCHAR(16),
                 PIN VARCHAR(16),
                 INDEX(user(6))');
+
+    createTable('usuarios',
+                'Usuario VARCHAR(16),
+                Contraseña VARCHAR(16),
+                INDEX(user(6))');            
 ?>
 
         <br>...done.
