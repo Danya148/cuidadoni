@@ -7,8 +7,8 @@
 
   if (isset($_POST['Usuario']))
   {
-    $Usuario = sanitizeString($_POST['Usuario']);
-    $Contraseña = sanitizeString($_POST['Contraseña']);
+    //$Usuario = sanitizeString($_POST['Usuario']);
+    //$Contraseña = sanitizeString($_POST['Contraseña']);
     
     if ($Usuario == "" || $Contraseña == "")
       $error = 'No se ingresaron todos los campos requeridos';
