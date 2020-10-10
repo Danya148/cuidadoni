@@ -69,7 +69,7 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          <button data-transition='slide' type='submit' value='Login' class="btn-primary">Submit</button>
+          <center><a href="PagPrin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ingresar</a></center>  
         </div>
       </form>
     </div>
