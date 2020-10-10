@@ -2,6 +2,7 @@
   require_once 'header.php';
   //require_once 'setup.php';
   require_once 'functions.php';
+  require_once 'PagPrin.php';
   //require_once 'setup.php';
   $error = $Usuario = $Contraseña = "";
 
