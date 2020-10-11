@@ -58,13 +58,13 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          INGRESAR:<br> 
+          Para ingresar como usuario:<br> 
           Usuario: Usuario<br>
           Contraseña: Usua2803<br><br>
 
           Para ingresar como administrador:<br>
           Usuario: Administrador<br>
-          Contraseña: Admin2803
+          Contraseña: Admin2803<br>
         </div>
           <label>Username</label>
           <input type='text' maxlength='16' name='Usuario' value='$Usuario'>
@@ -75,7 +75,7 @@ echo <<<_END
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          <center><a href="PagPrin.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Ingresar</a></center>  
+          <button type="submit" data-transition='slide' value='login' class="btn btn-primary">Ingresar</button>  
         </div>
       </form>
     </div>
