@@ -1,5 +1,6 @@
 <?php // Example 26-7: login.php
   require_once 'header.php';
+  require_once 'setup.php';
   $error = $user = $pass = "";
 
   if (isset($_POST['user']))
