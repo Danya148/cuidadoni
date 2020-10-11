@@ -33,11 +33,11 @@
       if ($result->num_rows > 0){
           if ($row['Usuario'] == 'Administrador'){
               echo '<script>alert("Bienvenido Administrador")</script> ';
-              echo "<script>location.href='PagPrin.php'</script>";
+              echo "<script>location.href='index.html'</script>";
           }
           else if($row['Usuario'] == 'Usuario'){
               echo '<script>alert("Bienvenido Cliente")</script> ';
-              echo "<script>location.href='PagPrin.php'</script>";
+              echo "<script>location.href='index.html'</script>";
           }
           else{
               echo '<script>alert("Contraseña incorrecta")</script> ';
