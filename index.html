@@ -20,19 +20,17 @@
 
 .grid {
 	display: grid;
-	grid-template-columns:
-		[xl-start] 1fr 1.5rem [md-start] minmax(0, 624px) [md-end] 1.5rem 1fr [xl-end];
+	grid-template-columns: 1fr 1fr 1r;
 }
 
-.grid *  { grid-column: md; }
-.grid-xl { grid-column: xl; }
+.grid * { grid-column: 2 / 3; }
 
 		</style>
 	</head>
 	<body>
 
 				<!-- .media -->
-				<article class="media center">
+				<article class="media grid">
 					<figure class="media-left">
 						<span class="image is-128x128">
 							<img src="imgG5.jpg">
