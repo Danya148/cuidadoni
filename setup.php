@@ -43,9 +43,9 @@ _INIT;
                 PIN VARCHAR(16),
                 INDEX(user(6))');
 
-    createTable('usuarios',
-                'Usuario VARCHAR(16),
-                Contraseña VARCHAR(16),
+    createTable('members',
+                'user VARCHAR(16),
+                pass VARCHAR(16),
                 INDEX(user(6))');            
 ?>
 

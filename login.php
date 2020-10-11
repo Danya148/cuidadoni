@@ -1,80 +1,72 @@
 <?php // Example 26-7: login.php
   require_once 'header.php';
-  //require_once 'setup.php';
-  require_once 'functions.php';
-  //require_once 'PagPrin.php';
-  //require_once 'setup.php';
-  
-  $error = $Usuario = $Contraseña = "";
+  $error = $user = $pass = "";
 
-  if (isset($_POST['Usuario']))
+  if (isset($_POST['user']))
   {
-    $Usuario = sanitizeString($_POST['Usuario']);
-    $Contraseña = sanitizeString($_POST['Contraseña']);
+    $user = sanitizeString($_POST['user']);
+    $pass = sanitizeString($_POST['pass']);
     
-    if ($Usuario == "" || $Contraseña == "")
-      $error = 'No se ingresaron todos los campos requeridos';
+    if ($user == "" || $pass == "")
+      $error = 'Not all fields were entered';
     else
     {
-      $result = queryMySQL("SELECT Usuario,Contraseña FROM usuarios
-        WHERE Usuario='$Usuario' AND Contraseña='$Contraseña'");
+      $result = queryMySQL("SELECT user,pass FROM members
+        WHERE user='$user' AND pass='$pass'");
 
       if ($result->num_rows == 0)
       {
-        $error = "Inicio de sesion no valido";
+        $error = "Invalid login attempt";
       }
       else
       {
-        $_SESSION['Usuario'] = $Usuario;
-        $_SESSION['Contraseña'] = $Contraseña;
+        $_SESSION['user'] = $user;
+        $_SESSION['pass'] = $pass;
+        die("<div class='center'>You are now logged in. Please
+             <a data-transition='slide' href='members.php?view=$user'>click here</a>
+             to continue.</div></div></body></html>");
 
-      $result=queryMysql("SELECT * FROM usuarios WHERE Usuario='{$_SESSION['Usuario']}'");
-      $row = $result->fetch_array(MYSQLI_ASSOC);
-      if ($result->num_rows > 0){
-          if ($row['Usuario'] == 'Administrador'){
-              echo '<script>alert("Bienvenido Administrador")</script> ';
-              echo "<script>location.href='index.html'</script>";
-          }
-          else if($row['Usuario'] == 'Usuario'){
-              echo '<script>alert("Bienvenido Cliente")</script> ';
-              echo "<script>location.href='index.html'</script>";
-          }
-          else{
-              echo '<script>alert("Contraseña incorrecta")</script> ';
-              echo "<script>location.href=login.php</script>";
-          }
+      $result1=queryMysql("SELECT usuario FROM members WHERE user='{$_SESSION['user']}'");
+      $row = $result1->fetch_array(MSQLI_ASSOC);
+      if ($result1->num_rows > 0){
+        if ($row['usuario'] == 'administrador'){
+          echo '<script>alert("Bienvenido Administrador")</script> ';
+          echo "<script>location.href='index.html'</script>";
         }
+        else if($row['usuario'] == 'cliente'){
+          echo '<script>alert("Bienvenido cliente")</script> ';
+          echo "<script>location.href='index.html'</script>";
+        }
+        else{
+          echo '<script>alert("Contraseña incorrecta")</script> ';
+          echo "<script>location.href='login.php'</script>";
+        }
+      }       
       }
     }
   }
 
 echo <<<_END
       <form method='post' action='login.php'>
-            <div class="form-group">
         <div data-role='fieldcontain'>
           <label></label>
           <span class='error'>$error</span>
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          Para ingresar como usuario:<br> 
-          Usuario: Usuario<br>
-          Contraseña: Usua2803<br><br>
-
-          Para ingresar como administrador:<br>
-          Usuario: Administrador<br>
-          Contraseña: Admin2803<br>
+          Please enter your details to log in
         </div>
+        <div data-role='fieldcontain'>
           <label>Username</label>
-          <input type='text' maxlength='16' name='Usuario' value='$Usuario'>
+          <input type='text' maxlength='16' name='user' value='$user'>
         </div>
         <div data-role='fieldcontain'>
           <label>Password</label>
-          <input type='password' maxlength='16' name='Contraseña' value='$Contraseña'>
+          <input type='password' maxlength='16' name='pass' value='$pass'>
         </div>
         <div data-role='fieldcontain'>
           <label></label>
-          <button type="submit" data-transition='slide' value='login' class="btn btn-primary">Ingresar</button>  
+          <input data-transition='slide' type='submit' value='Login'>
         </div>
       </form>
     </div>
