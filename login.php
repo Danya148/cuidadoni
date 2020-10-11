@@ -28,7 +28,7 @@
         $_SESSION['Usuario'] = $Usuario;
         $_SESSION['Contraseña'] = $Contraseña;
 
-      $result=queryMysql("SELECT Usuario FROM usuarios WHERE Usuario='{$_SESSION['Usuario']}'");
+      $result=queryMysql("SELECT * FROM usuarios WHERE Usuario='{$_SESSION['Usuario']}'");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($result->num_rows > 0){
           if ($row['Usuario'] == 'Administrador'){
@@ -50,8 +50,7 @@
 
 echo <<<_END
       <form method='post' action='login.php'>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-       <div class="form-group">
+            <div class="form-group">
         <div data-role='fieldcontain'>
           <label></label>
           <span class='error'>$error</span>
