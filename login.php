@@ -23,9 +23,9 @@
       {
         $_SESSION['user'] = $user;
         $_SESSION['pass'] = $pass;
-        die("<div class='center'>You are now logged in. Please
+        /*die("<div class='center'>You are now logged in. Please
              <a data-transition='slide' href='members.php?view=$user'>click here</a>
-             to continue.</div></div></body></html>");
+             to continue.</div></div></body></html>");*/
 
       $result1=queryMysql("SELECT usuario FROM members WHERE user='{$_SESSION['user']}'");
       $row = $result1->fetch_array(MSQLI_ASSOC);
