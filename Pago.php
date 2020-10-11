@@ -42,7 +42,8 @@
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">ENVIAR</button>
                                 
-                                <a href="Pag.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Siguiente</a>
+                                <a href="PagFin.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Siguiente</a>
+                                <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inicio</a>
                             </div>
                         </div>
                     </fieldset>
