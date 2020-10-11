@@ -54,6 +54,7 @@
                                 <button type="submit" class="btn btn-primary btn-lg">ENVIAR</button>
                                 
                                 <a href="InformacionNi.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Siguiente</a>
+                                <a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inicio</a>
                             </div>
                         </div>
                     </fieldset>
