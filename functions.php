@@ -1,8 +1,8 @@
 <?php
     $dbhost = 'localhost';
-    $dbname = 'cuidadodeniños';
+    $dbname = 'cuidadodeninos';
     $dbuser = 'root';
-    $dbpass = '';
+    $dbpass = '2803';
     
     $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
     if ($connection->connect_error) die("Fatal Error");

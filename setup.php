@@ -24,24 +24,24 @@
     <script src='javascript.js'></script>
 _INIT;
 
-    createTable('informacionniño',
+    createTable('informacionnino',
                 'NombreNi VARCHAR(16),
                 EdadNi VARCHAR(16),
                 Enfermedades VARCHAR(16),
-                INDEX(user(6))');
+                INDEX(NombreNi(6))');
     
     createTable('requisitos',
                 'NombreT VARCHAR(16),
                 NumeroT VARCHAR(16),
                 Contacto VARCHAR(16),
                 Horario VARCHAR(16),
-                INDEX(user(6))');
+                INDEX(NombreT(6))');
  
                 
     createTable('metodopago',
                 'NumTarjeta VARCHAR(16),
                 PIN VARCHAR(16),
-                INDEX(user(6))');
+                INDEX(NumTarjeta(6))');
 
     createTable('members',
                 'user VARCHAR(16),
