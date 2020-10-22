@@ -4,7 +4,8 @@
     $dbuser = 'root';
     $dbpass = '2803';
     
-    $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    //$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    $connection = new mysqli('localhost', 'root', '2803', 'cuidadonni');
     if ($connection->connect_error) die("Fatal Error");
 
     function createTable($name, $query)
